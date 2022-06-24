@@ -1,3 +1,3 @@
 # CRUD-TalentShow-FinalProject
 
-#will update later
+#Final Project - PHP Talent show Final Project
