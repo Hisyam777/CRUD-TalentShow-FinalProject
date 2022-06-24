@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head">
+	<title><?php echo $page_title; ?></title>	
+	<!--<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />-->
+	<!--<meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link href="includes/fontawesome/css/all.css" rel="stylesheet">
+
+</head>
+
+<!--  style="background-color:#ecf0f1;"-->
+
+<body style="background: linear-gradient(to right, #33ccff 0%, #3366ff 100%);">
+
+<div  style="background: linear-gradient(to top right, #33ccff 0%, #3366ff 100%);" class="jumbotron text-center jumbotron-fluid text-light" style="margin-bottom:0">
+	<h1 class="display-4">Welcome to BRIT Award Talent Show</h1>
+	<p class="lead">Book your talent audition show now!</p> 
+ </div>
+
+
+ <nav class="navbar justify-content-center bg-dark navbar-dark">
+
+
+		<ul class="nav">
+<?php // Create a login/logout link:
+if (isset($_SESSION['admin_id'])) { //successfully login admin
+	echo '
+	<li class="nav-item">
+		<a class="nav-link text-light" href="view_booking_admin.php"><i class="fas fa-clipboard"></i> View Booking List</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="logout_admin.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>';
+
+} else if (isset($_SESSION['candidate_id'])){ //successfully login customer
+	echo '
+	<li class="nav-item">
+		<a class="nav-link text-light" href="edit_booking.php"><i class="fas fa-pen"></i> Edit Info</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="view_booking.php"><i class="fas fa-clipboard"></i> View Booking</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="logout_candidate.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>';
+
+} else {
+	echo '
+	<li class="nav-item">
+		<a class="nav-link text-light" href="index.php"> <i class="fas fa-home"></i> Home page</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="register_candidate.php"><i class="far fa-file-alt"></i> Create Account</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="login_candidate.php"><i class="fas fa-user-friends"></i> Customer</a></li>
+	<li class="nav-item">
+		<a class="nav-link text-light" href="login_admin.php"><i class="fas fa-users-cog"></i> Admin</a></li>';
+}
+?>
+	</ul>
+</div>  
+</nav>
+
+	
+
+<div class="container p-4 bg-dark text-white col-lg-9">	<!-- Start of the page-specific content. -->
+	<div class="row">
+		<div class="col-10">
