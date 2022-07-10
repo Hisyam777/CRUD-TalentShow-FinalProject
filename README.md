@@ -1,4 +1,4 @@
-# CRUD-TalentShow-FinalProject
+# CRUD TalentShow FinalProject (2021)
 
 #Final Project - PHP Talent show Final Project
 #Purely hardcoded LOL except for the bootstrap framework.
